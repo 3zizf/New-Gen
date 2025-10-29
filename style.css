@@ -1,0 +1,295 @@
+/* اللون البرتقالي النيون مأخوذ من الشعار */
+:root {
+    --neon-orange: #ff6600;
+    --neon-orange-glow: 0 0 5px #ff6600, 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 40px #ff6600;
+    --dark-bg: #101010;
+    --card-bg: #1a1a1a;
+    --text-color: #f0f0f0;
+    --status-green: #00ff00;
+    --status-red: #ff0000;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+    flex-grow: 1; 
+}
+
+
+header {
+    background: var(--card-bg);
+    border-bottom: 2px solid var(--neon-orange);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 60px; /* تعديل الحجم حسب شعارك */
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.5));
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--neon-orange);
+    background-color: rgba(255, 102, 0, 0.1);
+    text-shadow: 0 0 5px var(--neon-orange);
+}
+
+/* --- تنسيق العناوين (نيون) --- */
+.neon-text {
+    font-size: 2.8rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: var(--neon-orange-glow);
+    animation: flicker 3s infinite alternate;
+}
+
+/* تأثير خافت لوميض النيون */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 10px #fff,
+      0 0 18px #fff,
+      0 0 38px var(--neon-orange),
+      0 0 70px var(--neon-orange),
+      0 0 80px var(--neon-orange),
+      0 0 90px var(--neon-orange),
+      0 0 140px var(--neon-orange);
+  }
+  20%, 24%, 55% {        
+    text-shadow: none;
+  }
+}
+
+/* --- تنسيق الصفحة الرئيسية --- */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.cta-button {
+    background-color: var(--neon-orange);
+    color: var(--dark-bg);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--neon-orange-glow);
+}
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600, 0 0 40px #ff6600, 0 0 80px #ff6600;
+}
+
+
+/* --- تنسيق البطاقات (للقوانين والوظائف) --- */
+.card, .job-card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-right: 4px solid var(--neon-orange);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(255, 102, 0, 0.2);
+}
+
+.card h2, .job-card h2 {
+    color: var(--neon-orange);
+    margin-top: 0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+/* --- تنسيق صفحة الوظائف --- */
+.job-status {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.job-status .status-active {
+    color: var(--status-green);
+    text-shadow: 0 0 8px var(--status-green);
+}
+
+.job-status .status-inactive {
+    color: var(--status-red);
+    text-shadow: 0 0 8px var(--status-red);
+}
+
+
+/* --- الفوتر --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: var(--card-bg);
+    color: #888;
+    border-top: 1px solid #333;
+}
+.footer-wrapper {
+    width: 100%;
+    margin-top: 40px; /* يعطي مسافة فوق قسم الديسكورد */
+}
+
+/* قسم الدعوة للانضمام (فوق الفوتر) */
+.cta-section {
+    text-align: center;
+    padding: 40px 20px 30px 20px;
+    background: var(--dark-bg); /* نفس خلفية الصفحة */
+    border-top: 1px solid #222; /* خط فاصل خفيف */
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+/* (تعديل بسيط على الزر لضمان ظهوره بشكل جيد في الفوتر) */
+.cta-button {
+    display: inline-block; /* لضمان تطبيق التنسيقات بشكل سليم */
+}
+
+/* (تنسيق الفوتر السفلي - للتأكيد) */
+footer {
+    border-top: 1px solid #333; /* هذا السطر موجود مسبقاً */
+}
+/* --- تنسيقات القائمة المنسدلة (Accordion) --- */
+
+.collapsible-trigger {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative; /* ضروري لوضع الأيقونة */
+    
+    /* تعديل على العناوين لجعلها تبدو كأزرار */
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 0; /* نلغي الهامش السفلي الافتراضي للـ h2 */
+    
+    /* ضمان أن الكلاس يغطي المساحة كاملة في البطاقة */
+    display: block;
+    /* السطر الجديد (مع مساحة أكبر لليمين) */
+    padding: 25px 25px 10px 40px; /* مساحة لليمين، ومساحة لليسار للأيقونة */
+    margin: -25px -25px 0 -25px; 
+    border-radius: 8px 8px 0 0; 
+}
+
+/* إزالة الـ padding الافتراضي من h2 داخل البطاقات بما أننا وضعناه في الكلاس */
+.card h2, .job-card h2 {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* تظليل خفيف عند مرور الماوس */
+.collapsible-trigger:hover {
+    background-color: rgba(255, 102, 0, 0.05);
+}
+
+/* أيقونة + / - */
+.toggle-icon {
+    position: absolute;
+    left: 20px; /* في اليسار (لأن الموقع عربي) */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em; /* حجم الأيقونة */
+    font-weight: 700;
+    color: var(--neon-orange);
+    text-shadow: 0 0 5px var(--neon-orange);
+    transition: transform 0.3s ease;
+}
+
+/* عندما تكون القائمة مفتوحة (active) */
+.collapsible-trigger.active {
+    border-bottom-color: #333; /* خط فاصل عند الفتح */
+}
+
+/* المحتوى المخفي */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    /* خلفية لتمييز المحتوى المفتوح */
+    background: rgba(0, 0, 0, 0.15); 
+    border-radius: 0 0 8px 8px; /* تنعيم الزوايا السفلية */
+}
+
+/* حاوية داخلية للـ padding (لتجنب مشاكل الـ transition) */
+.collapsible-content .inner-content {
+    padding: 20px 25px 15px 25px; /* هوامش داخلية للمحتوى */
+}
+
+/* إزالة الهوامش الافتراضية من أول وآخر عنصر داخل المحتوى */
+.collapsible-content .inner-content > *:first-child {
+    margin-top: 0;
+}
+.collapsible-content .inner-content > *:last-child {
+    margin-bottom: 0;
+}
+
+/* تعديل تنسيق البطاقات ليتناسب مع التعديل */
+.card, .job-card {
+    padding: 0; /* نلغي الـ padding الافتراضي للبطاقة */
+}
