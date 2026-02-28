@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Gen - الرئيسية</title> <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>دستور التاهو</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("tahoe.jpg") no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.overlay {
+    background-color: rgba(0,0,0,0.6);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+</style>
+
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo-container">
-                <img src="111.png" alt="New Gen Logo" class="logo">
-            </div>
-            <ul>
-                <li><a href="index.html" class="active">الرئيسية</a></li>
-                <li><a href="rules.html">القوانين</a></li>
-                <li><a href="jobs.html">الوظايف</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main class="container">
-        <section class="hero">
-             <h1 class="neon-text">مرحباً بك في سيرفر New Gen</h1>
-             <p>المكان الأفضل لتجربة حياة واقعية مميزة في FiveM.</p>
-            <a href="#" class="cta-button">ادخل سيرفرنا Discord</a>
-            </section>
-    </main>
+<div class="overlay">
+    <h1>اهلا بك في دستور التاهو</h1>
+    <a href="laws.html">
+        <button>لائحة القوانين</button>
+    </a>
+</div>
 
-    <div class="footer-wrapper">
-
-            
-
-        <footer>
-             <p>جميع الحقوق محفوظة &copy; 2025 - New Gen</p>
-        </footer>
-    </div>
-    
-    <script src="script.js"></script>
 </body>
 </html>
